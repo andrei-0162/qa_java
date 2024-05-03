@@ -9,7 +9,6 @@ import org.junit.runners.Parameterized;
 import org.mockito.Mockito;
 import tests.resources.Constants;
 
-import javax.sound.midi.Soundbank;
 
 @RunWith(Parameterized.class)
 public class LionParametrizedTest {
