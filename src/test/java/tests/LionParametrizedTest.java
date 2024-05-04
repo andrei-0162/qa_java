@@ -26,18 +26,21 @@ public class LionParametrizedTest {
     public static Object [][] testDataForDoesHaveManeLionTest() {
         return new Object[][] {
                 {Constants.ALIEN, false},
+                {Constants.EMPTY_STRING, false},
                 {Constants.MALE, true},
                 {Constants.FEMALE, false}
         };
     }
+
     @Test
-    public void doesHaveManeLionTest () throws Exception {
+    public void doesHaveManeLionTest3 () throws Exception {
         Feline feline = Mockito.mock(Feline.class);
-        try {
+        if (sex.equals(Constants.MALE) ||  sex.equals(Constants.FEMALE)) {
             Lion lion = new Lion(sex, feline);
             Assert.assertEquals(mane, lion.doesHaveMane());
-        } catch (Exception exception) {
-            Assert.assertEquals(Constants.SEX_ERROR_MESSAGE, exception.getMessage());
+        } else {
+            Assert.assertThrows(Exception.class, () -> new Lion(sex, feline));
         }
-        }
+    }
 }
+

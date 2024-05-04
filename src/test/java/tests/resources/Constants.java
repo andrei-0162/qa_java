@@ -11,7 +11,7 @@ public class Constants {
     public static final String FEMALE = "Самка";
     public static final String ALIEN = "Оно";
     public static final String PREDATOR = "Хищник";
-    public static final String SEX_ERROR_MESSAGE = "Используйте допустимые значения пола животного - самец или самка";
+    public static final String EMPTY_STRING = "";
 
 
 }

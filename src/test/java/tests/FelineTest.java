@@ -36,6 +36,6 @@ public class FelineTest {
         Feline feline = new Feline();
         Feline felineSpy = Mockito.spy(feline);
         felineSpy.getKittens();
-        Mockito.verify(felineSpy, Mockito.atLeastOnce()).getKittens(Constants.DEFAULT_FELINE_COUNT);
+        Mockito.verify(felineSpy).getKittens(Constants.DEFAULT_FELINE_COUNT);
     }
 }

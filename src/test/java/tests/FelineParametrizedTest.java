@@ -12,28 +12,26 @@ public class FelineParametrizedTest {
 
     private final int actualCase;
     private final int expectedCase;
-    private final boolean expectedTestResult;
 
-    public FelineParametrizedTest(int actualCase, int expectedCase, boolean expectedTestResult) {
+    public FelineParametrizedTest(int actualCase, int expectedCase) {
         this.actualCase = actualCase;
         this.expectedCase = expectedCase;
-        this.expectedTestResult = expectedTestResult;
     }
 
     @Parameterized.Parameters
     public static Object [][] testDataForGetKittensIntFelineParametrizeTest() {
         return new Object[][] {
-                //первое значение - используемое в кейсе, второе - ожидаемое на выходе, третье - ожидаемый результат проверки
-                {0, 0, true},
-                {1, 1, true},
-                {10, 10, true}
+                //первое значение - используемое в кейсе, второе - ожидаемое на выходе
+                {0, 0},
+                {1, 1},
+                {10, 10}
         };
     }
 
     @Test
     public void getKittensIntFelineParametrizeTest ()  {
         Feline feline = new Feline();
-        Assert.assertEquals(expectedTestResult, expectedCase == feline.getKittens(actualCase));
+        Assert.assertEquals(expectedCase, feline.getKittens(actualCase));
     }
 
 
